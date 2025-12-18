@@ -9,7 +9,7 @@ basketball-app/
 │
 ├── cmd/
 │   └── server/
-│       └── main.go                 # Application entry point, initializes Echo server
+│       └── main.go                 # Application entry point, initializes Gin server
 │
 ├── internal/                        # Private application code
 │   │
@@ -31,7 +31,7 @@ basketball-app/
 │   │   ├── player_statistics.go    # Player match statistics
 │   │   └── standing.go             # Tournament standings
 │   │
-│   ├── handlers/                   # HTTP request handlers (Echo handlers)
+│   ├── handlers/                   # HTTP request handlers (Gin handlers)
 │   │   ├── auth_handler.go         # Authentication endpoints
 │   │   ├── organization_handler.go # Organization CRUD
 │   │   ├── team_handler.go         # Team CRUD and queries
@@ -58,7 +58,7 @@ basketball-app/
 │   │   ├── tournament_repository.go
 │   │   └── statistics_repository.go
 │   │
-│   ├── middleware/                 # Echo middleware
+│   ├── middleware/                 # Gin middleware
 │   │   ├── auth.go                 # JWT authentication middleware
 │   │   ├── cors.go                 # CORS configuration
 │   │   ├── logger.go               # Request logging

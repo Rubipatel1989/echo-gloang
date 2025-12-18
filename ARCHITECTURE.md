@@ -6,9 +6,9 @@ A comprehensive basketball management system similar to Cricbuzz, with multi-ten
 ## Technology Stack
 
 ### Backend
-- **Framework**: Echo (Golang)
-- **Database**: PostgreSQL
-- **ORM**: GORM
+- **Framework**: Gin (Golang) - High performance, popular framework
+- **Database**: MySQL 8.0+ (PostgreSQL also supported via GORM)
+- **ORM**: GORM (supports both MySQL and PostgreSQL)
 - **Authentication**: JWT (JSON Web Tokens)
 - **Caching**: Redis (for live scores and frequently accessed data)
 - **File Storage**: Local filesystem or AWS S3 (for team logos, player photos)
@@ -358,6 +358,8 @@ basketball-app/
 WS /ws/matches/:id/live    - Subscribe to live match updates
 ```
 
+**Note:** Gin uses `gorilla/websocket` for WebSocket support, which is the industry standard and very reliable.
+
 ## Admin Panel Integration (GoAdmin)
 
 ### Admin Routes
@@ -396,11 +398,11 @@ WS /ws/matches/:id/live    - Subscribe to live match updates
 └──────┬──────────────────┘
        │
 ┌──────▼──────────────┐
-│   Echo API Server   │
+│   Gin API Server    │
 └──────┬──────────────┘
        │
 ┌──────▼──────┐  ┌──────────┐
-│ PostgreSQL  │  │  Redis   │
+│    MySQL    │  │  Redis   │
 └─────────────┘  └──────────┘
 ```
 
@@ -463,13 +465,15 @@ WS /ws/matches/:id/live    - Subscribe to live match updates
 PORT=8080
 ENV=development
 
-# Database
+# Database (MySQL)
 DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
+DB_PORT=3306
+DB_USER=root
 DB_PASSWORD=password
 DB_NAME=basketball_db
-DB_SSLMODE=disable
+DB_CHARSET=utf8mb4
+DB_PARSE_TIME=true
+DB_LOC=Local
 
 # Redis
 REDIS_HOST=localhost

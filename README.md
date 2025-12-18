@@ -1,6 +1,6 @@
 # Basketball Management System
 
-A comprehensive basketball management application similar to Cricbuzz, built with Golang (Echo framework) backend and Flutter frontend.
+A comprehensive basketball management application similar to Cricbuzz, built with Golang (Gin framework) backend and Flutter frontend.
 
 ## 🏀 Features
 
@@ -20,8 +20,8 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed architecture documentation
 ### Tech Stack
 
 **Backend:**
-- Echo Framework (Golang)
-- PostgreSQL (Database)
+- Gin Framework (Golang)
+- MySQL 8.0+ (Database)
 - GORM (ORM)
 - Redis (Caching & Real-time)
 - JWT (Authentication)
@@ -55,7 +55,7 @@ basketball-app/
 ### Prerequisites
 
 - Go 1.24+
-- PostgreSQL 15+
+- MySQL 8.0+ (or PostgreSQL)
 - Redis 7+
 - Docker & Docker Compose (optional)
 
@@ -88,9 +88,13 @@ basketball-app/
    go run cmd/server/main.go
    ```
 
-## 📚 API Documentation
+## 📚 Documentation
 
-API endpoints will be documented with Swagger (to be added).
+- [Architecture Overview](./ARCHITECTURE.md) - Detailed architecture
+- [Project Structure](./PROJECT_STRUCTURE.md) - Project organization
+- [API Endpoints](./API_ENDPOINTS.md) - API reference
+- [Gin Setup Guide](./GIN_SETUP.md) - Gin framework patterns and examples
+- [Framework Comparison](./FRAMEWORK_DATABASE_COMPARISON.md) - Tech stack decisions
 
 Base URL: `http://localhost:8080/api/v1`
 

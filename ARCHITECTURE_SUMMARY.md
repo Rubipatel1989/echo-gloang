@@ -19,7 +19,7 @@ A multi-tenant basketball management system where:
                      │ HTTPS/REST API
                      │ WebSocket (Live Updates)
 ┌────────────────────▼────────────────────────────────────┐
-│              Echo Framework (Golang)                    │
+│              Gin Framework (Golang)                     │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
 │  │   REST API   │  │  WebSocket   │  │  GoAdmin     │  │
 │  │   Endpoints  │  │   Server     │  │   Panel      │  │
@@ -32,9 +32,9 @@ A multi-tenant basketball management system where:
 └────┬──────────────────────┬──────────────────────┬──────┘
      │                      │                      │
 ┌────▼──────┐      ┌────────▼────────┐    ┌───────▼──────┐
-│PostgreSQL │      │      Redis      │    │ File Storage │
-│  Database │      │  (Cache/Live)   │    │  (Uploads)   │
-└───────────┘      └─────────────────┘    └──────────────┘
+│   MySQL  │      │      Redis      │    │ File Storage │
+│ Database │      │  (Cache/Live)   │    │  (Uploads)   │
+└──────────┘      └─────────────────┘    └──────────────┘
 ```
 
 ## 👥 User Roles & Capabilities
@@ -166,19 +166,21 @@ Request → Extract JWT → Validate Token → Check Role → Process Request
 
 ## 🚀 Technology Choices
 
-### Why Echo Framework?
-- ✅ Fast and lightweight
+### Why Gin Framework?
+- ✅ Very popular and fast
+- ✅ Excellent performance (one of the fastest Go frameworks)
 - ✅ Great middleware support
-- ✅ Easy to learn
-- ✅ Good documentation
-- ✅ Active community
+- ✅ Large ecosystem and community
+- ✅ Excellent documentation
+- ✅ Powerful routing features
 
-### Why PostgreSQL?
-- ✅ ACID compliance
-- ✅ Complex queries support
-- ✅ JSON support
-- ✅ Reliable and scalable
-- ✅ Open source
+### Why MySQL?
+- ✅ Very popular and mature
+- ✅ Excellent performance
+- ✅ Easy to use and manage
+- ✅ Great tooling support
+- ✅ Sufficient for your use case
+- ✅ GORM supports it natively
 
 ### Why Redis?
 - ✅ Fast caching
